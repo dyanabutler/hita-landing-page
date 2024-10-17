@@ -1,101 +1,198 @@
-import Image from "next/image";
+import { ArrowDownCircle, BarChart, Zap, DollarSign, Fish, Building2 } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Montserrat, Merriweather } from 'next/font/google'
+import Image from "next/image"
 
-export default function Home() {
+const montserrat = Montserrat({ subsets: ['latin'] })
+const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['latin'] })
+
+export default function Component() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <div className={`min-h-screen bg-gray-50 text-gray-900 ${montserrat.className}`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent text-white">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          <div className="flex items-center">
+            {/* <svg className="w-8 h-8 text-white mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span className={`text-xl font-bold text-white ${merriweather.className}`}>HITA
+             
+            </span> */}
+            <Image 
+              src="/color-logo.svg" // Corrected path
+              alt="HITA Logo" // More descriptive alt text
+              width={100} // Adjust as needed
+              height={100} // Adjust as needed
+              className="mr-2 rounded" // Optional: add margin or other styling
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <button className="text-white hover:text-green-200 transition-colors">
+            <p className="">Contact Us</p>
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </nav>
+
+      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-gray-900">
+        <div className="relative z-10 text-center px-4">
+          {/* <h1 className={`text-7xl font-bold mb-4 text-white ${merriweather.className}`}>
+            HITA
+          </h1> */}
+          <Image 
+              src="Colorlogo-nobackground.svg" // Corrected path
+              alt="HITA Logo" // More descriptive alt text
+              width={1200} // Adjust as needed
+              height={1200} // Adjust as needed
+              className="mr-2 roundedt" // Optional: add margin or other styling
+            />
+          <p className={`text-xl mb-8 text-green-100 ${merriweather.className}`}>
+            Revolutionizing heat recycling…beginning at the EDGE
+          </p>
+        </div>
+        <ArrowDownCircle className="absolute bottom-8 animate-bounce text-white w-8 h-8" />
+      </section>
+
+      <section className=" py-20 bg-white">
+        <div className="mb-12 max-w-3xl mx-auto">
+      <h3 className={`text-left ${merriweather.className}`}>
+        <span className="text-6xl font-bold block mb-2 bg-gradient-to-r from-green-600 to-green-400 text-transparent bg-clip-text">Why</span>
+        <span className="text-4xl block mb-2">waste edge server heat</span>
+        <span className="text-5xl font-bold block my-2 bg-gradient-to-r from-green-600 to-green-400 text-transparent bg-clip-text">when it could</span>
+        <span className="text-7xl font-bold block mb-2 bg-gradient-to-r from-green-600 to-green-400 text-transparent bg-clip-text">efficiently heat</span>
+        <span className="text-5xl block mb-2">homes and businesses</span>
+        <span className="text-6xl block mt-2 bg-gradient-to-r from-green-600 to-green-400 text-transparent bg-clip-text">. . .</span>
+      </h3>
     </div>
-  );
+  <div className="container mx-auto px-4">
+    <h2 className={`text-4xl font-bold mb-12 text-center ${merriweather.className}`}>
+      The Problem
+    </h2>
+    <h3 className={`text-3xl font-bold mb-8 text-center text-green-700 ${merriweather.className}`}>
+      Edge Compute Heat: An Untapped Resource
+    </h3>
+    <p className="text-lg mb-8 max-w-3xl mx-auto">
+      2% of global electricity is consumed by data centers today, expanding by 12% annually. By 2026, data centers are expected to consume 1,000 TWh globally. The energy used for cooling servers alone could power 50% of US homes for a year. Yet, most of this heat is treated as waste.
+    </p>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="bg-gray-100 p-6 rounded-lg">
+        <h4 className={`text-2xl font-bold mb-4 text-green-700 ${merriweather.className}`}>Environmental Impact</h4>
+        <p>Data center cooling energy contributes 5.6 million tons of CO2e emissions annually. Globally, heating contributes 40% of CO2e. Additionally, the average data center uses 300,000 gallons of water each day – the same as 100,000 US homes.</p>
+      </div>
+      <div className="bg-gray-100 p-6 rounded-lg">
+        <h4 className={`text-2xl font-bold mb-4 text-green-700 ${merriweather.className}`}>Impactful Statistic</h4>
+        <p>The average data center uses 300,000 gallons of water daily just to cool servers – enough to provide heating solutions for countless communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className={`text-4xl font-bold mb-12 text-center ${merriweather.className}`}>
+            The HITA Solution
+          </h2>
+          <h3 className={`text-3xl font-bold mb-8 text-center text-green-700 ${merriweather.className}`}>
+            Innovative Digital Heating Technology
+          </h3>
+          <p className="text-lg mb-8 max-w-3xl mx-auto">
+            HITAs groundbreaking digital heating technology is transforming the way edge server heat is recycled. With advanced algorithms and sensors, we optimize heat transfer and energy efficiency, reducing costs for edge locations.
+          </p>
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-3xl mx-auto mb-12">
+            <h4 className={`text-2xl font-bold mb-4 text-green-700 ${merriweather.className}`}>Proof of Concept</h4>
+            <p>HITA PT1 heated a 2,000 sq. ft. home at 98% efficiency through a North East winter, brought a 500-gallon tank to jacuzzi temperatures, and served numerous applications in ultra-cold environments.</p>
+          </div>
+
+          <h3 className={`text-3xl font-bold text-center mb-8 ${merriweather.className}`}>Key Benefits</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Zap className="w-8 h-8 text-green-600 mb-4" />
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Energy Efficiency</h4>
+              <p>Reusing server waste heat to heat spaces, significantly cutting energy usage.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <DollarSign className="w-8 h-8 text-green-600 mb-4" />
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Cost Savings</h4>
+              <p>Less energy consumption means reduced heating costs while meeting ESG goals.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <BarChart className="w-8 h-8 text-green-600 mb-4" />
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Environmental Impact</h4>
+              <p>Our technology supports a greener future by minimizing carbon emissions and promoting sustainability.</p>
+            </div>
+          </div>
+          <div className="bg-green-700 text-white p-8 rounded-lg shadow-lg mb-12">
+            <p className={`text-2xl font-semibold text-center ${merriweather.className}`}>
+              With a 10% edge market share, HITA could offset the CO2e emissions produced by all homes in NY and CA for an entire year, transforming waste heat into a valuable resource.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className={`text-4xl font-bold mb-12 text-center ${merriweather.className}`}>
+            Market Potential
+          </h2>
+          <h3 className={`text-3xl font-bold mb-8 text-center text-green-700 ${merriweather.className}`}>
+            Growing Demand for Edge Servers
+          </h3>
+          <p className="text-lg mb-8 max-w-3xl mx-auto">
+            AI, gaming, and video processing have driven a surge in demand for edge servers. These servers reduce latency and improve data processing times for critical, real-time applications.
+          </p>
+          <div className="bg-gray-100 p-6 rounded-lg max-w-3xl mx-auto mb-12">
+            <h4 className={`text-2xl font-bold mb-4 text-green-700 ${merriweather.className}`}>Market Size</h4>
+            <p className={`text-3xl font-bold mb-2 ${merriweather.className}`}>
+              The global edge market is projected to reach{" "}
+              <Badge variant="outline" className="bg-green-100 text-green-800 text-2xl border-green-300">
+                ~$220 billion by 2032
+              </Badge>
+            </p>
+            <p className="text-xl">Growing at a CAGR of 33.6%</p>
+          </div>
+
+          <h3 className={`text-3xl font-bold text-center mb-8 ${merriweather.className}`}>HITA Technology</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+            <div className="bg-gray-100 p-6 rounded-lg">
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Immersed Servers</h4>
+              <p>Full immersion maximizes heat transfer to water-based heating systems while minimizing server hot spots and extending GPU life.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg">
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Machine Learning Optimization</h4>
+              <p>Proprietary software manages facility water, immersion fluid, and server temperatures for peak performance.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg">
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Remote Control</h4>
+              <p>Our remotely controllable heaters provide unparalleled management of the heating system.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg">
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Overclocking Capability</h4>
+              <p>Overclocking allows for increased compute capacity and additional revenue opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className={`text-4xl font-bold mb-12 text-center ${merriweather.className}`}>
+            Customer Interest
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Fish className="w-8 h-8 text-green-600 mb-4" />
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Aquaculture</h4>
+              <p>A facility in Maine, currently relying on dirty fuel, is interested in HITA for consistent 78°F water temps.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <Building2 className="w-8 h-8 text-green-600 mb-4" />
+              <h4 className={`text-xl font-bold mb-2 text-green-700 ${merriweather.className}`}>Commercial Real Estate</h4>
+              <p>A commercial real estate owner is eager to install HITAs P2a, with the potential to save over $100,000 annually in fuel costs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
 }
