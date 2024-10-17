@@ -6,7 +6,7 @@ import Image from "next/image"
 const montserrat = Montserrat({ subsets: ['latin'] })
 const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['latin'] })
 
-export default function Component() {
+export default function Home() {
   return (
     <div className={`min-h-screen bg-gray-50 text-gray-900 ${montserrat.className}`}>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent text-white">
