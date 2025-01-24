@@ -1,7 +1,10 @@
+
 import { ArrowDownCircle, BarChart, Zap, DollarSign, Fish, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Montserrat, Merriweather } from 'next/font/google';
 import Image from "next/image";
+import { AnimatedSection, AnimatedStaggerSection } from './components/AnimatedSections';
+import { AnimatedHeroSection } from "./components/AnimatedHeroSection";
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['latin'] });
@@ -9,26 +12,13 @@ const merriweather = Merriweather({ weight: ['300', '400', '700'], subsets: ['la
 export default function Home() {
   return (
     <div className={`min-h-screen bg-gray-50 text-gray-900 ${montserrat.className}`}>
-      {/* Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent text-white">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex items-center">
-            <Image
-              src="/color-logo.svg"
-              alt="HITA Logo"
-              width={100}
-              height={100}
-              className="mr-2 rounded"
-            />
-          </div>
-          <button className="text-white hover:text-green-200 transition-colors">
-            <p>Contact Us</p>
-          </button>
-        </div>
-      </nav>
+    
+     <AnimatedHeroSection merriweather={""} />
+     
 
       {/* Fixed Background Section */}
       <section className="fixed inset-0 h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-green-800 to-gray-900 z-0">
+    
         <div className="relative z-10 text-center px-4">
           <Image
             src="Colorlogo-nobackground.svg"
@@ -37,17 +27,21 @@ export default function Home() {
             height={1200}
             className="mr-2 rounded"
           />
+         
           <p className={`text-xl mb-8 text-green-100 ${merriweather.className}`}>
             Revolutionizing heat recycling…beginning at the EDGE
           </p>
+         
         </div>
+        
         <ArrowDownCircle className="absolute bottom-8 animate-bounce text-white w-8 h-8" />
       </section>
 
       {/* Main Content */}
       <div className="relative z-10 mt-[100vh]">
         {/* Section 1 */}
-        <section className="py-20 bg-white">
+       
+        <AnimatedSection className="py-20 bg-white w-screen">
           <div className="mb-12 px-4 md:px-0 max-w-3xl mx-auto">
             <h3 className={`text-left ${merriweather.className}`}>
               <span className="text-6xl font-bold block mb-2 bg-gradient-to-r from-green-600 to-green-400 text-transparent bg-clip-text">Why</span>
@@ -80,10 +74,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </AnimatedSection>
+        
 
         {/* Section 2 */}
-        <section className="py-20 bg-gray-100">
+        <AnimatedStaggerSection className="py-20 bg-gray-100">
+        
           <div className="container mx-auto px-4">
             <h2 className={`text-4xl font-bold mb-12 text-center ${merriweather.className}`}>
               The HITA Solution
@@ -123,10 +119,14 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </section>
+          
+        </AnimatedStaggerSection>
+       
 
         {/* Section 3 */}
-        <section className="py-20 bg-white">
+        
+        <AnimatedSection className="py-20 bg-white">
+        
           <div className="container mx-auto px-4">
             <h2 className={`text-4xl font-bold mb-12 text-center ${merriweather.className}`}>
               Market Potential
@@ -168,10 +168,13 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+         
+       </AnimatedSection>
 
         {/* Section 4 */}
-        <section className="py-20 bg-gray-100">
+    
+        <AnimatedStaggerSection className="py-20 bg-gray-100">
+        
           <div className="container mx-auto px-4">
             <h2 className={`text-4xl font-bold mb-12 text-center ${merriweather.className}`}>
               Customer Interest
@@ -189,7 +192,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+          
+       </AnimatedStaggerSection>
+       
       </div>
     </div>
   );
